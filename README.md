@@ -26,3 +26,9 @@ insert into employee_payroll (name,salary,start) VALUES
 ('bill', 50000, '2018-01-03'),
 ('terisa', 200000, '2019-11-13');
 ```
+
+### Retrive all employee payroll data from payroll service database
+```
+select * from employee_payroll;
+```
+
