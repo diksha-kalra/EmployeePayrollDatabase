@@ -32,3 +32,8 @@ insert into employee_payroll (name,salary,start) VALUES
 select * from employee_payroll;
 ```
 
+### Retrive salary data from payroll service database based on name and employee payroll details based on joining date
+```
+select salary from employee_payroll where name='bill';
+select * from employee_payroll where start between cast('2018-01-01' as date) and date(now());
+```
