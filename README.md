@@ -18,3 +18,11 @@ start       DATE NOT NULL,
 PRIMARY KEY (id)
 );
 ```
+
+### Create Employee Payroll data in Payroll Service Database as a part of CRUD operation
+```
+insert into employee_payroll (name,salary,start) VALUES
+('mark', 50000, '2020-01-02'),
+('bill', 50000, '2018-01-03'),
+('terisa', 200000, '2019-11-13');
+```
