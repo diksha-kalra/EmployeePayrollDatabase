@@ -121,3 +121,4 @@ FOREIGN KEY (emp_id) REFERENCES employee_details(emp_id),
 FOREIGN KEY (dept_id) REFERENCES department(dept_id)
 );
 ```
+
