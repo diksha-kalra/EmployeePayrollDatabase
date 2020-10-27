@@ -82,3 +82,42 @@ insert into employee_payroll (name, department, gender, basic_pay, deductions, t
 VALUES('terisa', 'Marketing', 'F', 3000000, 100000, 2000000, 500000, 1500000, '2018-01-01');
 ```
   
+### UC11 Implement ER diagram into payroll service DB
+```
+create table company (
+company_id int NOT NULL PRIMARY KEY,
+company_name VARCHAR(250) NOT NULL);
+
+create table employee_details(
+emp_id int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+company_id int,
+phone_number VARCHAR(50) NOT NULL,
+address VARCHAR(250) NOT NULL,
+gender CHAR(1),
+start DATE NOT NULL,
+FOREIGN KEY (company_id) REFERENCES company (company_id)
+)ENGINE=INNODB;
+
+create table department (
+dept_id int NOT NULL PRIMARY KEY,
+dep_name VARCHAR(150) NOT NULL
+);
+
+create table payroll (
+emp_id int unsigned NOT NULL AUTO_INCREMENT,
+basic_pay Double NOT NULL,
+deductions Double NOT NULL,
+taxable_pay Double NOT NULL,
+tax Double NOT NULL,
+net_pay Double NOT NULL,
+FOREIGN KEY (emp_id) REFERENCES employee_details(emp_id)
+);
+
+create table employee_department (
+emp_id int unsigned NOT NULL AUTO_INCREMENT,
+dept_id int NOT NULL,
+FOREIGN KEY (emp_id) REFERENCES employee_details(emp_id),
+FOREIGN KEY (dept_id) REFERENCES department(dept_id)
+);
+```
