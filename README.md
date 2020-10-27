@@ -66,3 +66,11 @@ select * from employee_payroll;
 insert into employee_payroll (name, salary, start) VALUES('Charles', 10000, '2018-01-03');
 ```
 
+### UC9 Extend employee payroll table to have basic pay, deductions, taxable, income tax, and net pay
+```
+alter table employee_payroll rename colum salary to basic_pay;
+alter table employee_payroll add deductions Double NOT NULL after basic_pay;
+alter table employee_payroll add taxable_pay Double NOT NULL after deductions;
+alter table employee_payroll add tax Double NOT NULL after taxable_pay;
+alter table employee_payroll add net_pay Double NOT NULL after tax;
+```
