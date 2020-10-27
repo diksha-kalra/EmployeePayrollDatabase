@@ -54,3 +54,15 @@ select gender, min(salary) from employee_payroll group by gender;
 select gender, max(salary) from employee_payroll group by gender;
 select gender, count(name) from employee_payroll group by gender;
 ```
+
+### UC8 Extend employee payroll data to store phone number, address and department
+```
+alter table employee_payroll add phone_number VARCHAR(250) after name;
+alter table employee_payroll add address VARCHAR(250) after phone_number;
+alter table employee_payroll add department VARCHAR(250) NOT NULL after address;
+alter table employee_payroll alter adress set default 'TBD';
+describe employee_payroll;
+select * from employee_payroll;
+insert into employee_payroll (name, salary, start) VALUES('Charles', 10000, '2018-01-03');
+```
+
