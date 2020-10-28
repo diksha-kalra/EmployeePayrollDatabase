@@ -122,3 +122,21 @@ FOREIGN KEY (dept_id) REFERENCES department(dept_id)
 );
 ```
 
+### UC12 Retrieve data from tables
+```
+select sum(p.net_pay), e.gender from employee_details e left join payroll p
+on p.emp_id=e.emp_id group by e.gender;
+
+select avg(p.net_pay), e.gender from employee_details e left join payroll p
+on p.emp_id=e.emp_id group by e.gender;
+
+select min(p.net_pay), e.gender from employee_details e left join payroll p
+on p.emp_id=e.emp_id group by e.gender;
+
+select max(p.net_pay), e.gender from employee_details e left join payroll p
+on p.emp_id=e.emp_id group by e.gender;
+
+select count(p.net_pay), e.gender from employee_details e left join payroll p
+on p.emp_id=e.emp_id group by e.gender;
+```
+
