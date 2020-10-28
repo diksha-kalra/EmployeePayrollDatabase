@@ -123,6 +123,32 @@ FOREIGN KEY (dept_id) REFERENCES department(dept_id)
 ```
 
 ### UC12 Retrieve data from tables
+
+#### inserting data into tables
+```
+insert into company(company_id, company_name) VALUES
+(1,'CG');
+
+insert into employee_details(name,company_id,phone_number,address,gender,start) VALUES
+('mark',1,'9899686877','pamposh enclave','M','2018-08-01'),
+('terisa',1,'9899151676','agra','F','2019-01-01');
+
+insert into payroll(emp_id,basic_pay,deductions,taxable_pay,tax,net_pay) VALUES
+(1,50000,1000,20000,2000,30000),
+(2,70000,2000,25000,5000,45000);
+
+insert into department (dept_id, dept_name) VALUES
+(101,'Sales'),
+(202,'Marketing),
+(303,'AI');
+
+insert into employee_department (emp_id, dept_id) VALUES
+(1,101),
+(2,101),
+(2,202);
+```
+
+#### retrieving data from tables
 ```
 select sum(p.net_pay), e.gender from employee_details e left join payroll p
 on p.emp_id=e.emp_id group by e.gender;
